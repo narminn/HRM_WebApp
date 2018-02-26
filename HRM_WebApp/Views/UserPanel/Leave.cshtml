@@ -1,0 +1,49 @@
+﻿@model HRM_WebApp.ViewModel.Leave
+@{
+    ViewBag.Title = "Leave";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+
+
+    <section id="profile">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-9">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <i class="fas fa-tasks"></i> My Leave Applications
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Reason</th>
+                                            <th>Status</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model._leave)
+                                        {
+                                        <tr>
+                                            <td>@item.leave_date</td>
+                                            <td>@item.leave_reason</td>
+                                            <td><span class="badge badge-success">@item.Leave_status.status_name</span></td>
+                                        
+                                        </tr>
+                                        }
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

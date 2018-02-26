@@ -1,0 +1,189 @@
+﻿@model HRM_WebApp.ViewModel.AttendenceModel
+@{
+    ViewBag.Title = "Attendence_Employee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p>@DateTime.Now.ToShortDateString()</p>
+@using (Html.BeginForm("Attendence_Employee", "AdminPanel", FormMethod.Post))
+{
+    <div class="portlet box blue">
+        <div class="portlet-title">
+
+
+        </div>
+
+        <div class="portlet-body">
+
+            <table class="table   " id="expenses">
+                <thead>
+                    <tr>
+                        <th>
+                            Employee Id
+                        </th>
+                        <th>
+                            Employee Name
+                        </th>
+                        <th>
+                            Attendence Status
+                        </th>
+                        <th>
+                            Leave Type
+                        </th>
+
+                        <th>
+                            Reason
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+
+                    @foreach (var item in Model.emp)
+                    {
+
+                        <tr>
+                            <td><input type="number" class="numberid" value="@item.id" name="emp_id" /></td>
+                            <td>@item.emp_fullname</td>
+                            <td>
+                                <div class="col-md-2">
+                                    @*<input type="checkbox" id="checkbox8869895352" onchange="showHide('@item.id');return false;" class="make-switch" name="checkbox[@item.id]" checked data-on-color="success" data-on-text="P" data-off-text="A" data-off-color="danger">
+                                        <input type="hidden" name="status" value="@item.id">*@
+                                    <input name="status" value="0" class="checkvalue" type="checkbox" />
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+
+                                    <div class="col-md-10">
+                                        <select class="leaveid form-control"  name="leave_id">
+
+                                            @foreach (var i in Model.type)
+                                            {
+                                                <option  value="@i.id"><textbox>@i.type_name</option>
+                                            }
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><input class="reasonid" name="reason" /></td>
+
+
+                        </tr>
+                    }
+
+
+
+
+
+                </tbody>
+            </table>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit"  value="Submit" class="btn btn-default btnclick" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+    <script src="http://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+
+    </script>
+<script>   
+
+    var arrid = [];
+    var number = [];
+    var reason = [];
+    var leave = [];
+
+
+    $(document).ready(function () {
+        $(".checkvalue").val(0)
+        $(".checkvalue").click(function () {
+            if ($(this).val() == 0) {
+                $(this).val(1)
+            } else {
+                $(this).val(0)
+            }
+            console.log($(this).val())
+
+        })
+
+        //////Arrid Arrayi
+        $(".checkvalue").each(function () {
+            arrid.push($(this).val())
+        })
+        $(".checkvalue").change(function () {
+            arrid = [];
+            $(".checkvalue").each(function () {
+                arrid.push($(this).val())
+            })
+        })
+
+
+        //////Number Arrayi
+        $(".numberid").each(function () {
+            number.push($(this).val())
+        })
+        $(".numberid").change(function () {
+            number = [];
+            $(".numberid").each(function () {
+                number.push($(this).val())
+            })
+        })
+
+        //////Reason Arrayi
+        $(".reasonid").each(function () {
+            reason.push($(this).val())
+        })
+        $(".reasonid").change(function () {
+            reason = [];
+            $(".reasonid").each(function () {
+                reason.push($(this).val())
+            })
+        })
+
+        ////////Leave Arrayi
+        $(".leaveid").each(function () {
+            leave.push($(this).val())
+        })
+        $(".leaveid").change(function () {
+            leave = [];
+            $(".leaveid").each(function () {
+                leave.push($(this).val())
+            })
+        })
+
+
+        $(".btnclick").click(function () {
+            console.log("salam")
+            $.ajax({
+                type: "POST",
+                data: {
+                    number1: number,
+                    leave1: leave,
+                    arrid1: arrid,
+                    reason1:reason
+                },
+                
+                url: "http://localhost:54738/AdminPanel/createajax",
+                success: function (msg) {
+                    alert("ishleyir")
+                }
+            });
+        })
+    })
+
+    
+  
+
+   
+   
+</script>
+
+
+

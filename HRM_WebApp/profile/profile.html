@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Profile</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+	<section id="navbar_menu">
+		<nav class="navbar navbar-dark navbar-expand-lg navbar-light bg-dark">
+				<div class="container">
+					 <a class="navbar-brand" href="profile.html">
+				  	<img src="images/logo.png" width="80">
+				  </a>
+				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				    <span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+				    <ul class="navbar-nav ml-auto">
+				      <li class="nav-item">
+
+				       	 <a class="nav-link" href="profile.html">HOME </a>
+				      </li> 
+				       <li class="nav-item dropdown">
+					        <a class="nav-link" href="#" id="sub_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					         LEAVE <i class="fas fa-angle-down fa-xs"></i>
+					        </a>
+					        <div class="dropdown-menu" aria-labelledby="sub_menu">
+					          <a class="dropdown-item" href="#" data-toggle="modal" data-target=".apply_leave">Apply Leave</a> 
+					          <a class="dropdown-item" href="leave.html">My Leave</a> 
+					        </div>
+				      </li>
+				      <li class="nav-item dropdown">
+					        <a class="nav-link" href="#" id="sub_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					         MY ACCOUNT <i class="fas fa-angle-down fa-xs"></i>
+					        </a>
+					        <div class="dropdown-menu" aria-labelledby="sub_menu">
+					          <a class="dropdown-item" href="#" data-toggle="modal" data-target=".change_password">Change Pasword</a> 
+					          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#log_out_modal">Log Out</a> 
+					        </div>
+				      </li>
+				    </ul>
+				  </div>
+				</div> 
+	 </nav> 
+	</section>
+	
+	<section id="profile">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<div class="profile_img">
+						
+						<img src="images/bill-gates.jpg" class="img-fluid" >
+					</div>
+					<div class="user_about">
+						<h5>Bill Gates</h5>
+						<span>Senior Android Developer</span>
+					</div>
+					<div class="work_for">
+						<p>
+							<b>At work for :</b>
+							<span>3 year 7 month 4 day</span>
+						</p>
+					</div>
+					<hr>
+					<div class="user_points">
+						<div class="row">
+							<div class="col-md-4">
+								<h5>5/12</h5>
+								<span>ATTENDANCE</span>
+							</div> 
+							<div class="col-md-4">
+								<h5>25/452</h5>
+								<span>LEAVE</span>
+							</div> 
+							<div class="col-md-4">
+								<h5>0</h5>
+								<span>AWARDS</span>
+							</div> 
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="contain">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="item_title">
+											<h5> <i class="fas fa-pencil-alt"></i>  Personal Details</h5>
+										</div>
+										<div class="item_contain">
+											<table class="table table-light margin-bottom-0">
+												<tbody>
+													<tr>
+														<td> <span class="primry-link">Name</span> </td>
+														<td>Bill Gates</td>
+													</tr>
+													<tr>
+														<td><span class="primry-link">Surname</span></td>
+														<td>Bill Gates</td>
+													</tr>
+													<tr>
+														<td><span class="primry-link">DOB</span></td>
+														<td>15-May-2015</td>
+													</tr>
+													<tr>
+														<td><span class="primry-link">Gender</span></td>
+														<td>Female</td>
+													</tr>
+													<tr>
+														<td><span class="primry-link">Email</span></td>
+														<td>bill@gmail.com</td>
+													</tr>
+													<tr>
+														<td><span class="primry-link">Phone</span></td>
+														<td>+994-50-586-99-69</td>
+													</tr>
+												
+													<tr>
+														<td><span class="primry-link">Local Address</span></td>
+														<td>59125 Danial Summit Apt. 665 South Edwardside, TX 84759</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="item_title">
+											<h5><i class="fas fa-briefcase"></i>Company Details</h5>
+										</div>
+										<div class="item_contain">
+											<table class="table table-light margin-bottom-0">
+												<tbody>
+													<tr>
+														<td> <span class="primry-link">Employee ID</span> </td>
+														<td>000000001</td> 
+													</tr>
+													
+													<tr>
+														<td> <span class="primry-link">Department</span> </td>
+														<td>Android Developer</td> 
+													</tr>
+													<tr>
+														<td> <span class="primry-link">Designation</span> </td>
+														<td>Senior Android Developer</td> 
+													</tr>
+
+														<tr>
+														<td> <span class="primry-link">Date of Joining</span> </td>
+														<td>15-Jul-2014</td> 
+													</tr>
+													<tr>
+														<td> <span class="primry-link">Salary ($)</span> </td>
+														<td>
+															<p>
+																extra : 200 $
+															</p>
+															<p>
+																xx : 444  $
+															</p>
+														</td> 
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="item_title">
+											<h5><i class="fas fa-id-card"></i>Bank Details</h5>
+										</div>
+										<div class="item_contain">
+											<table class="table table-light margin-bottom-0">
+												<tbody>
+													<tr> 
+														<td>Account Holder Name</td> 
+													</tr> 
+													<tr>
+														<td>Account Number</td>  
+													</tr>	
+													<tr>
+														<td>Bank Name</td> 
+													</tr>
+													<tr>
+														<td>PAN Number</td> 
+													</tr>
+													<tr>
+														<td>IFSC Code</td>
+													</tr>
+													<tr>
+														<td>Branch</td> 
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="item_title">
+											<h5><i class="fas fa-bullhorn"></i>Notice Board</h5>
+										</div>
+										<div class="item_contain scrool_contain">
+											<div class="item">
+												<div class="date text-center">
+													<h6>11</h6>
+													<small>02, 2017</small>
+												</div>
+												<a href="#">Ise gecime meeting</a>
+												<p>srdtfghj</p>
+											</div> 
+											<div class="item">
+												<div class="date text-center">
+													<h6>25</h6>
+													<small>05, 2017</small>
+												</div>
+													<a href="#">Salary meeting</a>
+													<p>Maashlar artirilacaq.</p>
+											</div>  
+											<div class="item">
+												<div class="date text-center">
+													<h6>30</h6>
+													<small>01, 2017</small>
+												</div>
+													<a href="#">Salary meeting</a>
+													<p>Maashlar artirilacaq.</p>
+											</div>  
+											<div class="item">
+												<div class="date text-center">
+													<h6>17</h6>
+													<small>02, 2017</small>
+												</div>
+													<a href="#">Salary meeting</a>
+													<p>Maashlar artirilacaq.</p>
+											</div>  
+										</div> 
+									</div> 
+									<div class="col-md-12">
+										<div class="item_title">
+											<h5><i class="far fa-paper-plane"></i> Upcoming Holiday</h5>
+										</div>
+										<div class="item_contain scrool_contain">
+											<div class="alert-blocks alert-danger ">
+												<span>Sunday</span>
+												<small class="float-right"><em>12 apr, 2017</em></small>
+											</div>
+											<div class="alert-blocks alert-info ">
+												<span>Sunday</span>
+												<small class="float-right"><em>12 apr, 2017</em></small>
+											</div>
+											<div class="alert-blocks alert-success">
+												<span>Sunday</span>
+												<small class="float-right"><em>12 apr, 2017</em></small>
+											</div>
+											<div class="alert-blocks alert-warning ">
+												<span>Sunday</span>
+												<small class="float-right"><em>12 apr, 2017</em></small>
+											</div>
+											<div class="alert-blocks alert-primary ">
+												<span>Sunday</span>
+												<small class="float-right"><em>12 apr, 2017</em></small>
+											</div>
+											<div class="alert-blocks alert-info ">
+												<span>Sunday</span>
+												<small class="float-right"><em>12 apr, 2017</em></small>
+											</div>
+											<div class="alert-blocks alert-success">
+												<span>Sunday</span>
+												<small class="float-right"><em>12 apr, 2017</em></small>
+											</div>
+											<div class="alert-blocks alert-warning ">
+												<span>Sunday</span>
+												<small class="float-right"><em>12 apr, 2017</em></small>
+											</div>
+											<div class="alert-blocks alert-primary ">
+												<span>Sunday</span>
+												<small class="float-right"><em>12 apr, 2017</em></small>
+											</div>
+										</div> 
+									</div> 
+									<div class="col-md-12">
+										<div class="item_title">
+											<h5><i class="fas fa-trophy"></i>Awards</h5>
+										</div>
+										<div class="item_contain scrool_contain awards">
+											<div class="alert-blocks">
+												<b>Ethyl </b>
+												<small class="award-name">WE</small>
+												<small class="float-right"><em>Feburary, 2017</em></small>
+											</div> 
+											<div class="alert-blocks">
+												<b>Cara  </b>
+												<small class="award-name">Employee of the Month</small>
+												<small class="float-right"><em>May, 2014</em></small>
+											</div> 
+											<div class="alert-blocks">
+												<b>Zackery   </b>
+												<small class="award-name">Employee of the Month</small>
+												<small class="float-right"><em>May, 2014</em></small>
+											</div> 
+											<div class="alert-blocks">
+												<b>Tyshawn    </b>
+												<small class="award-name">Employee of the Month</small>
+												<small class="float-right"><em>April, 2014</em></small>
+											</div> 
+											<div class="alert-blocks">
+												<b>Aleen      </b>
+												<small class="award-name">Employee of the Month</small>
+												<small class="float-right"><em>March, 2014</em></small>
+											</div> 
+											<div class="alert-blocks">
+												<b>Aleen      </b>
+												<small class="award-name">Employee of the Month</small>
+												<small class="float-right"><em>March, 2014</em></small>
+											</div> 
+											<div class="alert-blocks">
+												<b>Cara  </b>
+												<small class="award-name">Employee of the Month</small>
+												<small class="float-right"><em>May, 2014</em></small>
+											</div> 
+											<div class="alert-blocks">
+												<b>Zackery   </b>
+												<small class="award-name">Employee of the Month</small>
+												<small class="float-right"><em>May, 2014</em></small>
+											</div> 
+											<div class="alert-blocks">
+												<b>Tyshawn    </b>
+												<small class="award-name">Employee of the Month</small>
+												<small class="float-right"><em>April, 2014</em></small>
+											</div> 
+											<div class="alert-blocks">
+												<b>Aleen      </b>
+												<small class="award-name">Employee of the Month</small>
+												<small class="float-right"><em>March, 2014</em></small>
+											</div> 
+											<div class="alert-blocks">
+												<b>Aleen      </b>
+												<small class="award-name">Employee of the Month</small>
+												<small class="float-right"><em>March, 2014</em></small>
+											</div> 
+										</div> 
+									</div> 
+								</div>
+							</div>
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="apply_modals"> 
+			<div class="modal fade apply_leave" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-lg">
+			    <div class="modal-content">
+
+			      <div class="modal-header">
+			        <h4 class="modal-title" id="myLargeModalLabel">Apply Leave</h4>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">×</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			      	<div class="container">
+			      		<form>
+				      		<div class="row">  
+				      			<div class="col-md-6"> 
+				      				<div class="form-group">
+				      					<label >Leave date : </label>
+				        				<input type="date" class="form-control"> 
+				      				</div>
+				      				<div class="form-group">
+				      					<label >Leave type : </label>
+				        				<select class="form-control">
+					        				<option value="">opi</option>
+					        				<option value="">Annual</option>
+				        				</select>
+				      				</div> 
+				      			</div> 
+				      			<div class="col-md-6"> 
+				      				<div class="form-group">
+				      					<label >Leave resion : </label>
+				        				<textarea class="form-control" style="height: 124px"></textarea> 
+				      				</div> 
+				      				<button type="submit" class="btn btn-success float-right">Submit</button>
+				      			</div>
+				      		</div> 
+			     		</form> 
+			      	</div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+	</section>
+	
+	<section id="password_modals"> 
+			<div class="modal fade change_password" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-lg">
+			    <div class="modal-content">
+
+			      <div class="modal-header">
+			        <h4 class="modal-title" id="myLargeModalLabel">Change Password</h4>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">×</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			      	<div class="container">
+				      		<div class="row">  
+				      			<div class="col-md-6"> 
+				      				<div class="form-group">
+				      					<label >New Password : </label>
+				        				<input type="password" class="form-control"> 
+				      				</div> 
+				      			</div> 
+				      			<div class="col-md-6"> 
+				      				<div class="form-group">
+				      					<label >Confirm Password : </label>
+				        				<input type="password" class="form-control"> 
+				      				</div> 
+				      				<button type="submit" class="btn btn-outline-warning float-right">Submit</button>
+				      			</div>
+				      		</div> 
+			      	</div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+	</section>
+
+<section id="log_out">
+<div class="modal fade" id="log_out_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Log Out</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Do you wont exit this app ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Logout</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+    <script src="js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

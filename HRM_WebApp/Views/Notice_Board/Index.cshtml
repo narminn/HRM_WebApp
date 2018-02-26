@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HRM_WebApp.Models.Notice_Board>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.notice_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.notice_content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.notice_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departament.depart_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.notice_title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.notice_content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.notice_status)
+        </td>
+        <td>
+            @if (item.dep_id == null)
+            {
+                <span>All</span>
+            }
+            else
+            { 
+            @Html.DisplayFor(modelItem => item.Departament.depart_name)
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

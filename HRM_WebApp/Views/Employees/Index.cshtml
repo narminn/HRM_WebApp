@@ -1,0 +1,133 @@
+﻿@model IEnumerable<HRM_WebApp.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_fullname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_phone)
+        </th>
+        <th>
+            At Work
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_work_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departament.depart_name)/ @Html.DisplayNameFor(model=>model.Designation.desig_name)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
+        <td>
+            <img src="~/Uploads/@item.emp_photo" style="width:100px;height:100px;" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_fullname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_phone)
+        </td>
+        <td>
+      @{ 
+          var year = 0;
+          var month = 0;
+          var day = 0;
+          DateTime time = DateTime.Parse(item.emp_date_of_joining.ToString());
+          DateTime now = DateTime.Parse(DateTime.Now.ToString());
+          if (time.Month > now.Month)
+          {
+              year=now.Year - time.Year - 1;
+              if (time.Day > now.Day)
+              {
+                  month=now.Month - time.Month + 12 - 1;
+                  if (now.Month == 01 || now.Month == 07 || now.Month == 05 || now.Month == 08 || now.Month == 10 || now.Month == 12)
+                  {
+                      day=now.Day - time.Day + 30;
+                  }
+                  else if (now.Month == 03)
+                  {
+                      day=now.Day - time.Day + 28;
+
+                  }
+                  else
+                  {
+                      day=now.Day - time.Day + 31;
+                  }
+              }
+              else
+              {
+                  month=now.Month - time.Month + 12;
+                  day=now.Day - time.Day;
+              }
+          }
+          else
+          {
+              year=now.Year - time.Year;
+              if (time.Day > now.Day)
+              {
+                  month=now.Month - time.Month - 1;
+                  if (now.Month == 01 || now.Month == 07 || now.Month == 05 || now.Month == 08 || now.Month == 10 || now.Month == 12)
+                  {
+                      day=now.Day - time.Day + 30;
+                  }
+                  else if (now.Month == 03)
+                  {
+                      day=now.Day - time.Day + 28;
+
+                  }
+                  else
+                  {
+                      day=now.Day - time.Day + 31;
+                  }
+              }
+              else
+              {
+                  month=now.Month - time.Month;
+                  day=now.Day - time.Day;
+              }
+          }
+      }
+            @year  year @month  month @day  day
+        
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_work_status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departament.depart_name)/ @Html.DisplayFor(modelItem => item.Designation.desig_name)
+        </td>
+        
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+        </td>
+    </tr>
+}
+
+</table>

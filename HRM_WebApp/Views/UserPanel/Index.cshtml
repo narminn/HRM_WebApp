@@ -1,0 +1,201 @@
+﻿@model HRM_WebApp.ViewModel.UserModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+
+
+
+
+    <section id="profile">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <div class="profile_img">
+
+                        <img src="~/Uploads/@Model.Employee.emp_photo" class="img-fluid">
+                    </div>
+                    <div class="user_about">
+                        <h5>@Model.Employee.emp_fullname</h5>
+                        <span>@Model.Employee.Departament.depart_name</span> /
+                        <span>@Model.Employee.Designation.desig_name</span>
+                    </div>
+                    <div class="work_for">
+                        <p>
+                            <b>At work for :</b>
+                            <span>3 year 7 month 4 day</span>
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="user_points">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h5>5/12</h5>
+                                <span>ATTENDANCE</span>
+                            </div>
+                            <div class="col-md-4">
+                                <h5>25/452</h5>
+                                <span>LEAVE</span>
+                            </div>
+                            <div class="col-md-4">
+                                <h5>0</h5>
+                                <span>AWARDS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="contain">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="item_title">
+                                            <h5> <i class="fas fa-pencil-alt"></i>  Personal Details</h5>
+                                        </div>
+                                        <div class="item_contain">
+                                            <table class="table table-light margin-bottom-0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td> <span class="primry-link">Name</span> </td>
+                                                        <td>@Model.Employee.emp_fullname</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="primry-link">Father Name</span></td>
+                                                        <td>@Model.Employee.emp_fathername</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="primry-link">DOB</span></td>
+                                                        <td>@Model.Employee.emp_dateof_birth</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="primry-link">Gender</span></td>
+                                                        <td>@Model.Employee.Gender.gender_name</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="primry-link">Email</span></td>
+                                                        <td>@Model.Employee.emp_email</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="primry-link">Phone</span></td>
+                                                        <td>@Model.Employee.emp_phone</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><span class="primry-link">Local Address</span></td>
+                                                        <td>@Model.Employee.emp_address</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="item_title">
+                                            <h5><i class="fas fa-briefcase"></i>Company Details</h5>
+                                        </div>
+                                        <div class="item_contain">
+                                            <table class="table table-light margin-bottom-0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td> <span class="primry-link">Employee ID</span> </td>
+                                                        <td>@Model.Employee.id</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td> <span class="primry-link">Department</span> </td>
+                                                        <td>@Model.Employee.Departament.depart_name</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> <span class="primry-link">Designation</span> </td>
+                                                        <td>@Model.Employee.Designation.desig_name</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td> <span class="primry-link">Date of Joining</span> </td>
+                                                        <td>@Model.Employee.emp_date_of_joining</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> <span class="primry-link">Salary ($)</span> </td>
+                                                        <td>
+                                                            <p>
+                                                                @Model.Employee.emp_salary
+                                                            </p>
+
+                                                            </td>
+                                                        </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="item_title">
+                                            <h5><i class="fas fa-bullhorn"></i>Notice Board</h5>
+                                        </div>
+                                        <div class="item_contain scrool_contain">
+                                            @foreach (var item in Model.Notice)
+                                            {
+                                            <div class="item">
+                                                
+                                                <h4>@item.notice_title</h4>
+                                                <p>@item.notice_content</p>
+                                                
+                                            </div>
+                                            }
+                                            
+                                            
+                                            
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="item_title">
+                                            <h5><i class="far fa-paper-plane"></i>Holiday</h5>
+                                        </div>
+
+                                        <div class="item_contain scrool_contain">
+                                            @foreach (var item in Model.Holiday)
+            {
+                                <div class="alert-blocks alert-danger ">
+                                    <span>@item.holiday_name</span>
+                                    <small class="float-right"><em>@item.holiday_date</em></small>
+                                </div>
+}
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="item_title">
+                                            <h5><i class="fas fa-trophy"></i>Awards</h5>
+                                        </div>
+                                        <div class="item_contain scrool_contain awards">
+                                            @foreach (var item in Model.Award)
+            {
+                                <div class="alert-blocks">
+
+                                    <small class="award-name">@item.award_name</small>
+                                    <small class="float-right"><em>@item.award_date</em></small>
+                                </div>
+}
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+

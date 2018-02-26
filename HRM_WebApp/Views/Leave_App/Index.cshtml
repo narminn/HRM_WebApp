@@ -1,0 +1,50 @@
+﻿@model IEnumerable<HRM_WebApp.Models.Leave_App>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.leave_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.leave_reason)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.emp_fullname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Leave_status.status_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.leave_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.leave_reason)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.emp_fullname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Leave_status.status_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

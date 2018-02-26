@@ -1,0 +1,156 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="~/profile/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/profile/css/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+    <section id="navbar_menu">
+        <nav class="navbar navbar-dark navbar-expand-lg navbar-light bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="profile.html">
+                    <img src="~/profile/images/logo.png" width="80">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="/UserPanel/Index">HOME </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="sub_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                LEAVE <i class="fas fa-angle-down fa-xs"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="sub_menu">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target=".apply_leave">Apply Leave</a>
+                                <a class="dropdown-item" href="/UserPanel/Leave">My Leave</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="sub_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                MY ACCOUNT <i class="fas fa-angle-down fa-xs"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="sub_menu">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target=".change_password">Change Pasword</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#log_out_modal">Log Out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+    @RenderBody()
+    <section id="apply_modals">
+        <div class="modal fade apply_leave" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myLargeModalLabel">Apply Leave</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <form method="post" action="/UserPanel/Submit_Leave">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Leave date : </label>
+                                            <input type="date" class="form-control" name="l_date">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Leave resion : </label>
+                                            <textarea class="form-control" style="height: 124px" name="l_reason"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-success float-right">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="password_modals">
+        <div class="modal fade change_password" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myLargeModalLabel">Change Password</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <form method="post" action="/UserPanel/ChangePassword">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Old Password : </label>
+                                            <input type="password" class="form-control" name="old_password">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>New Password : </label>
+                                            <input type="password" class="form-control" name="new_password">
+                                        </div>
+                                        <button type="submit" class="btn btn-outline-warning float-right">Submit</button>
+                                    </div>
+                                </div>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="log_out">
+        <div class="modal fade" id="log_out_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Log Out</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Do you wont exit this app ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary"><a href="/UserPanel/Logout" style="color:white;text-decoration:none">Logout</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/profile/js/jquery.js"></script>
+    <script src="~/profile/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/profile/js/script.js"></script>
+</body>
+</html>

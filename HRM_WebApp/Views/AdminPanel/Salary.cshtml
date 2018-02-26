@@ -1,0 +1,85 @@
+﻿@model HRM_WebApp.ViewModel.Salary
+@{
+    ViewBag.Title = "Salary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Salary</h2>
+
+<div class="portlet box blue">
+    <div class="portlet-title">
+        
+
+    </div>
+
+    <div class="portlet-body">
+
+        <table class="table table-striped table-bordered table-hover" id="expenses">
+            <thead>
+                <tr>
+                    <th>
+                        Employee Id
+                    </th>
+                    <th>
+                        Employee Name
+                    </th>
+                    <th>
+                        Beginner Salary
+                    </th>
+                    <th>
+                        Employee Leave Count
+                    </th>
+                    <th>
+                        End of month Salary
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ 
+                    int x = 0;
+                    int y = 0;
+                }
+
+
+                @foreach (var item in Model._employee)
+                {
+
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.emp_fullname</td>
+                    <td>@item.emp_salary</td>
+                    
+                    <td>
+                        @{
+                            int a = 0;
+                         }
+                        
+                        @foreach (var j in Model._leave)
+                            {
+                                if (j.leave_emp_id == item.id)
+                                {
+                                            a = @Model._leave.Count();
+                                }
+                            }
+                        <span>@a</span>
+                    </td>
+                    <td>
+                        @{ 
+                            
+                            int endSalary = Convert.ToInt32(item.emp_salary) - a * 10;
+                        }
+                        <span>@endSalary</span>
+                    </td>
+                </tr>
+                }
+               
+
+
+
+
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
